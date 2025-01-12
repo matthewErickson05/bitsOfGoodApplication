@@ -59,6 +59,22 @@
             text-align: left;
         }
 
+        .confetti-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .confetti-btn:hover {
+            background-color: #2980b9;
+        }
+
         .bee {
             position: absolute;
             width: 40px;
@@ -112,10 +128,23 @@
         <div class="paragraph">
             I am really passionate about reducing the tech knowledge gap in America. In high school, I helped out at my local nursing home teaching residents how to properly use their mobile devices to better communicate with their families. Additionally, I was a frequent volunteer at the Kramden Institute which refurbishes computers and gives them to families in need of a computer for school.
         </div>
+        <button class="confetti-btn" onclick="launchConfetti()">Press for Confetti</button>
     </div>
 
     <div class="bee"></div>
     <div class="bee"></div>
     <div class="bee"></div>
+
+    <!-- Canvas Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function launchConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
 </body>
 </html>
